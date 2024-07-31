@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time Table</title>
+    <style>
+        .timetable {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            grid-template-rows: repeat(6, 50px); 
+            gap: 1px;
+            background-color: #f6e8e8;
+        }
+        .timetable div {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #ece8e8;
+            border: 1px solid #121111;
+        }
+        .header {
+            background-color: #efe7e7;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="timetable">
+        <div class="header">Monday</div>
+        <div class="header">Tuesday</div>
+        <div class="header">Wednesday</div>
+        <div class="header">Thursday</div>
+        <div class="header">Friday</div>
+        <div class="header">Saturday</div>
+        <div class="header">Sunday</div>
+
+        <div>8:00 AM</div>
+        <div>8:00 AM</div>
+        <div>8:00 AM</div>
+        <div>8:00 AM</div>
+        <div>8:00 AM</div>
+        <div>8:00 AM</div>
+        <div>8:00 AM</div>
+
+        <div>9:00 AM</div>
+        <div>9:00 AM</div>
+        <div>9:00 AM</div>
+        <div>9:00 AM</div>
+        <div>9:00 AM</div>
+        <div>9:00 AM</div>
+        <div>9:00 AM</div>
+
+        <div>10:00 AM</div>
+        <div>10:00 AM</div>
+        <div>10:00 AM</div>
+        <div>10:00 AM</div>
+        <div>10:00 AM</div>
+        <div>10:00 AM</div>
+        <div>10:00 AM</div>
+
+        <div>11:00 AM</div>
+        <div>11:00 AM</div>
+        <div>11:00 AM</div>
+        <div>11:00 AM</div>
+        <div>11:00 AM</div>
+        <div>11:00 AM</div>
+        <div>11:00 AM</div>
+
+        <div>12:00 PM</div>
+        <div>12:00 PM</div>
+        <div>12:00 PM</div>
+        <div>12:00 PM</div>
+        <div>12:00 PM</div>
+        <div>12:00 PM</div>
+        <div>12:00 PM</div>
+    </div>
+</body>
+</html>
