@@ -1,0 +1,22 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: aquamarine;
+}
+.gallery{
+    gap: 10px;
+    display: flex;
+}
+
+.zoom-image{
+    width: 150px;
+    height: 100px;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+}
+.zoom-image.zoomed {
+    transform: scale(1.5);
+}
