@@ -1,0 +1,23 @@
+body{
+    overflow: hidden;
+    background-color: rgb(152, 164, 196);
+    flex: auto;
+    justify-content: center;
+}
+h2{
+    /* font-size: 50; */
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 100;
+    
+    /* font-style: italic; */
+}
+.container{
+    background-color: rgb(246, 244, 246);
+    margin-left: 500px;
+    margin-top: 200px;
+    /* margin-bottom: 500px; */
+    margin-right :700px;
+    justify-content: center;
+    padding-left: 20px;
+
+}
