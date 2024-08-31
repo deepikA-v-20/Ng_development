@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Change </title>
+</head>
+<body>
+    <p id="text" class="random-text"> text</p>
+    <button id="changeColorButton">Change</button>
+
+    <script>
+        function getRandomColor() {
+            const letters = '0123456789ABCDEF';
+            let color = '#';
+            for (let i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+
+        function changeTextColor() {
+            const demo = document.getElementById('text');
+            demo.style.color = getRandomColor();
+        }
+    </script>
+</body>
+</html>
