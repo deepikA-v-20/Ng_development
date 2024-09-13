@@ -1,63 +1,68 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Music Appication</title>
-    </head>
+        <title>Music Application</title>
+        <link rel="stylesheet" href="muic.css">
+   </head>
+
     <body>
-        <div class="Container">
-            <h1> Music Playlist</h1>
+        <div class="container">
+            <h1>Music Playlist</h1>
             <audio id="audio" controls>
-                <source src ="song.mp3" type="audio/mp3">
-                Your browser does not support
+                <source src="song.mp3" type="audio/mp3">
+                Your browser does not support audio.
             </audio>
-            <div class ="controls">
-                <button id="prev">Previous</button>
-                <button id="play">play</button>
-                <button id ="next">Next</button>
+            <div class="controls">
+                <button id="prev">⏮ Previous</button>
+                <button id="play">⏯ Play</button>
+                <button id="next">⏭ Next</button>
             </div>
-            <div id="sonf">Playing: song1.mp3</div>
+            <div id="song">Playing: song1.mp3</div>
         </div>
     </body>
+
     <script>
-        const songs=['a.mp3','b.mp3','c.mp3'];
-        let curr=0;
+        const songs = ['a.mp3', 'b.mp3', 'c.mp3'];
+        let curr = 0;
         const audio = document.getElementById('audio');
-        const prev=document.getElementById("prev");
+        const prev = document.getElementById("prev");
         const play = document.getElementById("play");
         const next = document.getElementById("next");
-        const title = document.getElementById("sonf");
+        const title = document.getElementById("song");
 
         loadSong(songs[curr]);
-        function loadSong(song){
+
+        function loadSong(song) {
             audio.src = song;
-            title.textContent =`Palying: ${song}`;
+            title.textContent = `Playing: ${song}`;
         }
-        play.addEventListener('click',() => {
-            if(audio.paused){
+
+        play.addEventListener('click', () => {
+            if (audio.paused) {
                 audio.play();
-                play.textContent =" pause";
-            }
-            else{
+                play.textContent = "⏸ Pause";
+            } else {
                 audio.pause();
-                play.textContent ="play";
+                play.textContent = "⏯ Play";
             }
         });
-        next.addEventListener('click',() =>{
-            curr = (curr+1)%songs.length;
+
+        next.addEventListener('click', () => {
+            curr = (curr + 1) % songs.length;
             loadSong(songs[curr]);
             audio.play();
-            play.textContent="pause";
+            play.textContent = "⏸ Pause";
         });
 
-        prev.addEventListener('click',() =>{
-           curr = m(curr-1+song.length)%songs.length;
-           loadSong(songs[curr]);
-           audio.play();
-           play.textContent="pause"; 
+        prev.addEventListener('click', () => {
+            curr = (curr - 1 + songs.length) % songs.length;
+            loadSong(songs[curr]);
+            audio.play();
+            play.textContent = "⏸ Pause";
         });
 
-        audio.addEventListener('click',() =>{
-            play.textContent = 'play';
-        })
+        audio.addEventListener('ended', () => {
+            play.textContent = "⏯ Play";
+        });
     </script>
 </html>
