@@ -1,0 +1,71 @@
+body{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: #99d4e4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.container{
+    background-color: white;
+    padding: 20px;
+    border-radius: 22px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-top: auto;
+    margin-bottom: auto;
+    /* margin-left: 100px; */
+    max-width: 350px;
+    /* max-height: 100vh; */
+    height: 100%;
+    width: 100%;
+    /* overflow: s; */
+}
+h1{
+    text-align: center;
+    color: #333;
+}
+.form{
+    margin-bottom: 15px;
+}
+.form label{
+    display:block;
+    margin-bottom: 5px;
+    color: #555;
+}
+.form input,form select{
+    /* width: 25%; */
+    /* height: 50%; */
+    padding: 10px;
+    border: 1px solid dotted;
+    border-radius: 5px;
+}
+.form input[type="checkbox"]{
+    width: auto;
+}
+.form span{
+    color: rgb(224, 69, 26);
+    font-size: 12px;
+    display: none;
+}
+.form-button{
+    text-align: center;
+}
+
+.form-button button{
+    padding:  10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 5px;
+}
+.form-button button[type="submit"]{
+    background-color: burlywood;
+    color:black;
+}
+.form-button button[type="reset"]{
+    background-color:burlywood;
+    color: black;
+}
+.form input.error, .form select.error {
+    border-color: red;
+}

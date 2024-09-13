@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>To-do List</title>
+    </head>
+    <style>
+        body{
+            justify-content: center;
+            text-align: center;
+            overflow: hidden;
+            background-color: rgb(188, 173, 192);
+            display: flex;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        .h1{
+            text-align: center;
+            color: black;
+        }
+        .Container{
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+            margin-top: 300px;
+            max-width: 300px;
+            width: 100%;
+            border-radius: 12px;
+            border: 0ch;
+            border: 5px solid black;
+            background-color: rgb(124, 137, 151);
+        }
+        input[type="text"] {
+            width: 50%;
+            padding: 5px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            width: 30%;
+            padding: 5px;
+            background-color: #2a362d;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            padding: 10px;
+            background: #f9f9f9;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .delete-btn {
+            background-color: #dc3545;
+            color: white;
+            border: none;
+            padding: 5px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .time {
+            font-size: 12px;
+            color: #555;
+        }
+
+    </style>
+    <body>
+        <div class="Container">
+            <h1> To-Do List </h1>
+            <input type="text" id="new-task" placeholder="Enter a new task">
+            <button onclick="Submit()"> Add Task</button>
+
+            <ul id="list">
+
+            </ul>
+        </div>
+        <script>
+            // Function to add a new task
+            function Submit() { 
+                const task = document.getElementById("new-task");
+                const text = task.value;
+    
+                // If input is empty, show an alert and stop
+                if (text.trim() === "") {
+                    alert("Please enter a task");
+                    return;
+                }
+    
+                // Get the current time
+                const time = new Date();
+                const timenow = time.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+    
+                // Create new list item
+                const tasklist = document.getElementById("list");
+                const newTask = document.createElement("li");
+                newTask.innerHTML = `${text} <span class="time">${timenow}</span> <button class="delete-btn" onclick="removeTask(this)">Delete</button>`;
+    
+                // Append the new task to the list
+                tasklist.appendChild(newTask);
+    
+                // Clear the input field
+                task.value = '';
+            }
+    
+            // Function to remove a task
+            function removeTask(button) {
+                const task = button.parentElement; // Get the parent <li>
+                task.remove(); // Remove the task from the list
+            }
+        </script>
+    </body>
+</html>

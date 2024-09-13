@@ -72,10 +72,23 @@
 
 // // console.log("state"+ get(person));
 //  
-function value(num){
-    num.val="new";
-    console.log("inside"+num);
-}
-let num={val:"old"};
-value(num);
-console.log("out: "+num);
+// function value(num){
+//     num.val="new";
+//     console.log("inside"+num);
+// }
+// let num={val:"old"};
+// value(num);
+// console.log("out: "+num);
+
+console.log('Using var:');
+        console.log(a); // undefined (due to hoisting)
+        var a = 5;
+        console.log(a);
+        console.log('Using let:');
+        console.log(b); // ReferenceError: Cannot access 'b' before initialization
+        let b = 10;
+        console.log(b);
+        console.log('Using const:');
+        console.log(c); // ReferenceError: Cannot access 'c' before initialization
+        const c = 15;
+        console.log(c); 

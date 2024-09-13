@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Form</title>
+    </head>
+    <body>
+        <h1>Form Validation</h1>
+        <form if ='Form' onsubmit="return validare()">
+            <p>
+            <label for="username">Username:</label>
+        <input type="text" id="username" name="username">
+        <span id="usernameError" class="error"></span>
+    </p>
+    <p>
+        <label for="email">Email:</label>
+        <input type="text" id="email" name="email">
+        <span id="emailError" class="error"></span>
+    </p>
+    <p>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password">
+        <span id="passwordError" class="error"></span>
+    </p>
+        <input type="submit" value="Submit">
+    </form> 
+
+    </body>
+    <script src="validatre.js"></script>
+</html>

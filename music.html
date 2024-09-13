@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Music Appication</title>
+    </head>
+    <body>
+        <div class="Container">
+            <h1> Music Playlist</h1>
+            <audio id="audio" controls>
+                <source src ="song.mp3" type="audio/mp3">
+                Your browser does not support
+            </audio>
+            <div class ="controls">
+                <button id="prev">Previous</button>
+                <button id="play">play</button>
+                <button id ="next">Next</button>
+            </div>
+            <div id="sonf">Playing: song1.mp3</div>
+        </div>
+    </body>
+    <script>
+        const songs=['a.mp3','b.mp3','c.mp3'];
+        let curr=0;
+        const audio = document.getElementById('audio');
+        const prev=document.getElementById("prev");
+        const play = document.getElementById("play");
+        const next = document.getElementById("next");
+        const title = document.getElementById("sonf");
+
+        loadSong(songs[curr]);
+        function loadSong(song){
+            audio.src = song;
+            title.textContent =`Palying: ${song}`;
+        }
+        play.addEventListener('click',() => {
+            if(audio.paused){
+                audio.play();
+                play.textContent =" pause";
+            }
+            else{
+                audio.pause();
+                play.textContent ="play";
+            }
+        });
+        next.addEventListener('click',() =>{
+            curr = (curr+1)%songs.length;
+            loadSong(songs[curr]);
+            audio.play();
+            play.textContent="pause";
+        });
+
+        prev.addEventListener('click',() =>{
+           curr = m(curr-1+song.length)%songs.length;
+           loadSong(songs[curr]);
+           audio.play();
+           play.textContent="pause"; 
+        });
+
+        audio.addEventListener('click',() =>{
+            play.textContent = 'play';
+        })
+    </script>
+</html>

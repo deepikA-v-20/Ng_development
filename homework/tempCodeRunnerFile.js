@@ -1,15 +1,5 @@
-//Nested Function
-// function fun1(a){
-//     function fun2(b){
-//         return a+b;
-//     }
-//     function fun3(c){
-//         return a*c;
-//     }
-//     return {
-//         add:fun2,
-//         mult:fun3
-//     };
+function fun(){
+//     console.log("print");
+//     setTimeout(fun,1000);
 // }
-// const res = fun1(2);
-// console.log(res.add(2));
+// setTimeout(fun,1000);

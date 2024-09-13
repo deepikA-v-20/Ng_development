@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scroll Event on div</title>
+    <style>
+        .scrollable-container {
+            height: 300px; 
+            overflow: auto; 
+            border: 2px solid #ccc;
+            padding: 10px;
+            transition: background-color 0.3s;  
+        }
+        .content {
+            height: 1000px; /* Create enough content to enable scrolling */
+            background: linear-gradient(to bottom, #ffffff, #cccccc);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="scrollable-container" id="scrollable">
+        <div class="content"></div>
+    </div>
+
+    <script>
+        document.getElementById('scrollable').onscroll = function() {
+            if (this.scrollTop > 100) {
+                this.style.backgroundColor = '#f0f8ff';
+            } else {
+                this.style.backgroundColor = '#ffffff';
+            }
+        };
+    </script>
+
+</body>
+</html>

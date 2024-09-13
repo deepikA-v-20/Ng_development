@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>DOM</title>
+    </head>
+    <body>
+        <h1 id = "class"> Welcome to DOM</h1>
+        <button id = "one"> click</button>
+        <!-- <p id="one">HELLO</p> -->
+        <script>
+            document.getElementById("one").onclick=function(){
+                func();
+            }
+        </script>
+        <script>
+            document.getElementById("one").addEventListener("click",func);
+            function func(){
+                document.getElementById("class").innerHTML="Hi Deepika, Welcome to DOM creation !!!";
+                document.getElementById("class").style.color="black";
+                document.getElementById("class").style.background="cyan";
+                document.getElementById("class").style.fonsize="50px";
+                document.getElementById("class").style.textShadow="2px 2px 5px gray";
+                document.getElementById("class").style.border="2px solid green";
+                document.getElementById("class").style.padding="10px";
+    
+            }
+        </script>
+    </body>
+</html>
