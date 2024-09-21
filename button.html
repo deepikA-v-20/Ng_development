@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Grid Zoom Example</title>
+    <style>
+        .grid-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-gap: 10px;
+            padding: 20px;
+        }
+
+        .grid-item {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 150px;
+            background-color: lightgray;
+            border: 1px solid #ccc;
+            transition: transform 0.3s ease;
+        }
+
+        .zoom-in {
+            transform: scale(1.2); 
+        }
+
+        .zoom-out {
+            transform: scale(1); 
+        }
+
+        button {
+            padding: 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<div class="grid-container">
+    <div class="grid-item">
+        <button onclick="Zoom(this)">Zoom 1</button>
+    </div>
+    <div class="grid-item">
+        <button onclick="Zoom(this)">Zoom 2</button>
+    </div>
+    <div class="grid-item">
+        <button onclick="Zoom(this)">Zoom 3</button>
+    </div>
+    <div class="grid-item">
+        <button onclick="Zoom(this)">Zoom 4</button>
+    </div>
+</div>
+
+<script>
+    function Zoom(button) {
+        const gridItem = button.parentElement;
+
+        if (gridItem.classList.contains('zoom-in')) {
+            gridItem.classList.remove('zoom-in');
+            gridItem.classList.add('zoom-out');
+        } else {
+            gridItem.classList.remove('zoom-out');
+            gridItem.classList.add('zoom-in');
+        }
+    }
+</script>
+
+</body>
+</html>

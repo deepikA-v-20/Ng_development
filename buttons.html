@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .border {
+            border: 3px solid black;
+        }
+    </style>
+</head>
+<body>
+
+    <p id="nh">new para</p>
+    <button id="border">Click to add border</button>
+    <button id="text">Change text</button>
+    <button id="color">Change color</button>
+
+    <script>
+        const borderButton = document.getElementById('border');
+        const textButton = document.getElementById('text');
+        const colorButton = document.getElementById('color');
+        const paragraph = document.getElementById('nh');
+
+        borderButton.addEventListener('click', function() {
+            paragraph.classList.toggle('border');
+        });
+
+        textButton.addEventListener('click', function() {
+            paragraph.innerText = "Text changed!";
+        });
+
+        document.addEventListener('keypress', function() {
+            paragraph.style.color = 'blue';
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,92 @@
+:root{
+    --line-border-fill:green;
+    --line-border-empty:rgb(216, 6, 6);
+}
+
+*{
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: burlywood;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    margin:0;
+}
+.container{
+    text-align: center;
+}
+.progress-container{
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    margin-bottom: 30px;
+    max-width: 100%;
+    width: 350px;
+}
+
+.progress-container::before{
+    content: "";
+    background-color: var(--line-border-empty);
+    position:absolute;
+    top:50%;
+    left:0;
+    transform: translateY(-50%);
+    height: 4px;
+    width:0%;
+    z-index:-1;
+}
+.progress{
+
+content: "";
+    background-color: var(--line-border-empty);
+    position:absolute;
+    top:50%;
+    left:0;
+    transform: translateY(-50%);
+    height: 4px;
+    width:0%;
+    z-index:-1;
+    transform: 0.4s ease;
+}
+.circle{
+    background-color: rgb(156,97,19);
+    color: rgb(22, 24, 24);
+    border-radius: 50%;
+    height: 30px;
+    width:30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solis var(--line-border-empty);
+
+}
+:btn:active{
+    transform: scale(0.98);
+}
+
+.circle.active{
+border-color: yellow;
+}
+.btn{
+    background-color: var(--line-border-fill);
+    color:black;
+    border: 0;
+    border-radius: 6px;
+    cursor: pointer;
+    padding:8px 30px;
+    margin: 5px;
+    font-size: 14px;
+
+}
+.btn:focus{
+    outline: 0;
+}
+
+.btn:disabled{
+    background-color: var(--line-border-empty);
+    cursor: not-allowed;
+}

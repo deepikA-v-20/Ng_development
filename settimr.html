@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Document</title>
+    </head>
+    <body>
+        <p id="ng"></p>
+        <button onclick="func(ng)">Click</button>
+    </body>
+    <!-- <script>
+        let vari = setInterval(ng, 2000); // Keeps adding <p> welcome </p> every 2 seconds
+        function ng() {
+            document.getElementById("ng").innerHTML += "<p>Welcome</p>";
+        } -->
+    <!-- </script> -->
+    <script>
+        function func(callback) {
+            // Immediately set the content to 'Welcome' and stop the interval after 5 seconds
+            document.getElementById("ng").innerHTML = "new";
+
+            setTimeout(function(){
+     // Stop the interval after 5 seconds
+                callback();  // Execute the callback
+            }, 2000);
+        }
+        
+        function call() {
+            document.getElementById("ng").innerHTML = "ngduk";  // Can be used as another callback example
+        }
+    </script>
+</html>

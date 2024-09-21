@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>call</title>
+    </head>
+    <body>
+        <button onclick="mainfunc(callbackFunction)">Show</button>
+    </body>
+    <script>
+        let number=["apple","banana","grapes"];
+function mainfunc(callback){
+    console.log("operation performing...");
+    number.forEach(callback);
+}
+function callbackFunction(number){
+    // console.log("resukt"+number);
+    alert(number)
+}
+
+    </script>
+</html>
